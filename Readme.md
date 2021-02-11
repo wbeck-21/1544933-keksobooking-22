@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Анастасия Коровка](https://up.htmlacademy.ru/javascript/22/user/1544933).
-* Наставник: `Неизвестно`.
+* Наставник: [Александр Григорьев](https://htmlacademy.ru/profile/fuckhtml).
 
 ---
 
