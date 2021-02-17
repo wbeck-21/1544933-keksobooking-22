@@ -8,4 +8,4 @@ const getRandomInteger = (begin, end, quantitySigns) => {
   console.log('Упс, что-то пошло не так...');
 }
 
-console.log(getRandomInteger(4.2, 4.6, 4));
+console.log(getRandomInteger(4.2, 5.6, 4));
