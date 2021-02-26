@@ -123,8 +123,7 @@ const generateFeatures = () => {
   let n = Math.floor(Math.random() * possibleFeatures.length);
 
   for (let i = 0; i < n; i++) {
-    let feature = possibleFeatures.splice(n, n);
-    features[0] = feature;
+    features = possibleFeatures.splice(n, n);
   }
 
   return features;
@@ -141,8 +140,7 @@ const generatePhotos = () => {
   let n = Math.floor(Math.random() * possiblePhotos.length);
 
   for (let i = 0; i < n; i++) {
-    let photo = possiblePhotos.splice(n, n);
-    photos[i] = photo;
+    photos = possiblePhotos.splice(n, n);
   }
 
   return photos;
