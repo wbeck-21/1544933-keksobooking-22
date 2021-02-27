@@ -120,10 +120,13 @@ const generateFeatures = () => {
   ];
 
   let features = [];
-  let n = Math.floor(Math.random() * possibleFeatures.length);
+  let n = Math.floor(Math.random() * possibleFeatures.length) + 1; // длина массива в полуинтервале [1; n)
 
   for (let i = 0; i < n; i++) {
-    features = possibleFeatures.splice(n, n);
+    let randomIndex = Math.floor(Math.random() * possibleFeatures.length); // случайный индекс в пределах [0; n-длина массива)
+
+    features.push(possibleFeatures[randomIndex]); // с помощью метода push() записываем значение, взятое из массива а с помощью randomIndex
+    possibleFeatures.splice(randomIndex, 1); // удаление значения с индексом randomIndex из массива possibleFeatures
   }
 
   return features;
@@ -137,10 +140,13 @@ const generatePhotos = () => {
   ];
 
   let photos = [];
-  let n = Math.floor(Math.random() * possiblePhotos.length);
+  let n = Math.floor(Math.random() * possiblePhotos.length) + 1;
 
   for (let i = 0; i < n; i++) {
-    photos = possiblePhotos.splice(n, n);
+    let randomIndex = Math.floor(Math.random() * possiblePhotos.length);
+
+    photos.push(possiblePhotos[randomIndex]);
+    possiblePhotos.splice(randomIndex, 1);
   }
 
   return photos;
