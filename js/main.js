@@ -1,25 +1,27 @@
-import {generateAvatar} from './util.js';
-import {generateTitle} from './util.js';
-import {generateX} from './util.js';
-import {generateY} from './util.js';
-import {generateDiscription} from './util.js';
-import {generateAddress} from './util.js';
-import {generatePrice} from './util.js';
-import {generateType} from './util.js';
-import {generateRooms} from './util.js';
-import {generateGuests} from './util.js';
-import {generateCheckIn} from './util.js';
-import {generateCheckOut} from './util.js';
-import {generateFeatures} from './util.js';
-import {generatePhotos} from './util.js';
+import { generateAvatar } from './util.js';
+import { generateTitle } from './util.js';
+import { generateX } from './util.js';
+import { generateY } from './util.js';
+import { generateDiscription } from './util.js';
+import { generateAddress } from './util.js';
+import { generatePrice } from './util.js';
+import { generateType } from './util.js';
+import { generateRooms } from './util.js';
+import { generateGuests } from './util.js';
+import { generateCheckIn } from './util.js';
+import { generateCheckOut } from './util.js';
+import { generateFeatures } from './util.js';
+import { generatePhotos } from './util.js';
 
-import {allTitles} from './data.js';
-import {allDescriptions} from './data.js';
-import {allTypes} from './data.js';
-import {allCheckIn} from './data.js';
-import {allCheckOut} from './data.js';
-import {possibleFeatures} from './data.js';
-import {possiblePhotos} from './data.js';
+import { allTitles } from './data.js';
+import { allDescriptions } from './data.js';
+import { allTypes } from './data.js';
+import { allCheckIn } from './data.js';
+import { allCheckOut } from './data.js';
+import { possibleFeatures } from './data.js';
+import { possiblePhotos } from './data.js';
+
+import './map.js';
 
 const generateObj = () => {
   let obj = {};
@@ -48,15 +50,39 @@ const generateObj = () => {
 }
 
 
-const generateData = (n) => {
-  let data = [];
+// const generateData = (n) => {
+//   let data = [];
 
-  for (let i = 0; i < n; i++) {
-    data[i] = generateObj();
-  }
+//   for (let i = 0; i < n; i++) {
+//     data[i] = generateObj();
+//   }
 
-  return data;
-}
+//   return data;
+// }
 
-console.log(generateData(10));
+
+// Блок, в котором будут отображаться похожие объявления
+const block = document.querySelector('.map__canvas');
+
+
+// Находим шаблон и получаем его содержимое
+const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
+
+
+
+const generateRandomCard = generateObj();
+
+generateRandomCard.forEach((obj) => {
+  const cardElement = cardTemplate.cloneNode(true);
+  cardElement.querySelector('.popup__title').textContent = obj.offer.title;
+  cardElement.querySelector('.popup__text--address').textContent = obj.offer.addres;
+  cardElement.querySelector('.popup__text--price').textContent = obj.offer.price;
+  cardElement.querySelector('.popup__type').textContent = obj.offer.type;
+  cardElement.querySelector('.popup__text--capacity').textContent = obj.offer.rooms;
+
+  cardElement.querySelector('.popup__features').textContent = obj.offer.features;
+  cardElement.querySelector('.popup__description').textContent = obj.offer.descriptions;
+
+  block.appendChild(cardElement);
+});
 
