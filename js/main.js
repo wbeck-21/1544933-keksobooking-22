@@ -21,7 +21,7 @@ import { allCheckOut } from './data.js';
 import { possibleFeatures } from './data.js';
 import { possiblePhotos } from './data.js';
 
-import './map.js';
+import { renderData } from './render.js';
 
 const generateObj = () => {
   let obj = {};
@@ -60,29 +60,7 @@ const generateObj = () => {
 //   return data;
 // }
 
-
-// Блок, в котором будут отображаться похожие объявления
-const block = document.querySelector('.map__canvas');
+const data = generateObj();
 
 
-// Находим шаблон и получаем его содержимое
-const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
-
-
-
-const generateRandomCard = generateObj();
-
-generateRandomCard.forEach((obj) => {
-  const cardElement = cardTemplate.cloneNode(true);
-  cardElement.querySelector('.popup__title').textContent = obj.offer.title;
-  cardElement.querySelector('.popup__text--address').textContent = obj.offer.addres;
-  cardElement.querySelector('.popup__text--price').textContent = obj.offer.price;
-  cardElement.querySelector('.popup__type').textContent = obj.offer.type;
-  cardElement.querySelector('.popup__text--capacity').textContent = obj.offer.rooms;
-
-  cardElement.querySelector('.popup__features').textContent = obj.offer.features;
-  cardElement.querySelector('.popup__description').textContent = obj.offer.descriptions;
-
-  block.appendChild(cardElement);
-});
-
+renderData(data);
