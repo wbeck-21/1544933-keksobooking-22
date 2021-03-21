@@ -1,25 +1,27 @@
-import {generateAvatar} from './util.js';
-import {generateTitle} from './util.js';
-import {generateX} from './util.js';
-import {generateY} from './util.js';
-import {generateDiscription} from './util.js';
-import {generateAddress} from './util.js';
-import {generatePrice} from './util.js';
-import {generateType} from './util.js';
-import {generateRooms} from './util.js';
-import {generateGuests} from './util.js';
-import {generateCheckIn} from './util.js';
-import {generateCheckOut} from './util.js';
-import {generateFeatures} from './util.js';
-import {generatePhotos} from './util.js';
+import { generateAvatar } from './util.js';
+import { generateTitle } from './util.js';
+import { generateX } from './util.js';
+import { generateY } from './util.js';
+import { generateDiscription } from './util.js';
+import { generateAddress } from './util.js';
+import { generatePrice } from './util.js';
+import { generateType } from './util.js';
+import { generateRooms } from './util.js';
+import { generateGuests } from './util.js';
+import { generateCheckIn } from './util.js';
+import { generateCheckOut } from './util.js';
+import { generateFeatures } from './util.js';
+import { generatePhotos } from './util.js';
 
-import {allTitles} from './data.js';
-import {allDescriptions} from './data.js';
-import {allTypes} from './data.js';
-import {allCheckIn} from './data.js';
-import {allCheckOut} from './data.js';
-import {possibleFeatures} from './data.js';
-import {possiblePhotos} from './data.js';
+import { allTitles } from './data.js';
+import { allDescriptions } from './data.js';
+import { allTypes } from './data.js';
+import { allCheckIn } from './data.js';
+import { allCheckOut } from './data.js';
+import { possibleFeatures } from './data.js';
+import { possiblePhotos } from './data.js';
+
+import { renderData } from './render.js';
 
 const generateObj = () => {
   let obj = {};
@@ -48,15 +50,17 @@ const generateObj = () => {
 }
 
 
-const generateData = (n) => {
-  let data = [];
+// const generateData = (n) => {
+//   let data = [];
 
-  for (let i = 0; i < n; i++) {
-    data[i] = generateObj();
-  }
+//   for (let i = 0; i < n; i++) {
+//     data[i] = generateObj();
+//   }
 
-  return data;
-}
+//   return data;
+// }
 
-console.log(generateData(10));
+const data = generateObj();
 
+
+renderData(data);
