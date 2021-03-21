@@ -19,10 +19,29 @@ const renderData = (n) => {
   // Как вывести иконки?
   cardElement.querySelector('.popup__features').textContent = n.offer.features;
   cardElement.querySelector('.popup__description').textContent = n.offer.descriptions;
-  cardElement.querySelector('.popup__photo').src = n.offer.photos;
+
+
+  cardElement.querySelector('.popup__photos').innerHTML = '';
+
+
+
+  for (let i = 0; i < n.offer.photos.length; i++) {
+    const imgElement = document.createElement('img');
+
+    imgElement.src = n.offer.photos[i];
+    imgElement.alt = 'Фотография жилья';
+    imgElement.setAttribute('width', 45);
+    imgElement.setAttribute('height', 40);
+    imgElement.className = 'popup__photo';
+    cardElement.querySelector('.popup__photos').appendChild(imgElement);
+
+    console.log(imgElement);
+  }
+
 
   block.appendChild(cardElement);
 };
+
 
 export { renderData };
 
