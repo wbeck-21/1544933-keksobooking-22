@@ -23,6 +23,8 @@ import { possiblePhotos } from './data.js';
 
 import { renderData } from './render.js';
 
+import {mapCanvas} from './map.js';
+
 const generateObj = () => {
   let obj = {};
 
@@ -60,7 +62,9 @@ const generateObj = () => {
 //   return data;
 // }
 
+
 const data = generateObj();
-
-
 renderData(data);
+
+console.log(mapCanvas);
+

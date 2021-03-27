@@ -102,17 +102,33 @@ const generatePhotos = (data) => {
   return photos;
 }
 
-export {generateAvatar};
-export {generateTitle};
-export {generateX};
-export {generateY};
-export {generateDiscription};
-export {generateAddress};
-export {generatePrice};
-export {generateType};
-export {generateRooms};
-export {generateGuests};
-export {generateCheckIn};
-export {generateCheckOut};
-export {generateFeatures};
-export {generatePhotos};
+// Перевод страницы в неактивное состояние
+
+const advertismentForm = document.querySelector('.ad-form');
+advertismentForm.classList.add('ad-form--disabled');
+for (let i = 0; i < advertismentForm.length; i++) {
+  const advertismentFieldset = advertismentForm.childNodes[i];
+
+  console.log(advertismentFieldset);
+
+  // Не работает
+  advertismentFieldset.setAttribute('disabled', 'disabled');
+}
+
+
+
+
+export { generateAvatar };
+export { generateTitle };
+export { generateX };
+export { generateY };
+export { generateDiscription };
+export { generateAddress };
+export { generatePrice };
+export { generateType };
+export { generateRooms };
+export { generateGuests };
+export { generateCheckIn };
+export { generateCheckOut };
+export { generateFeatures };
+export { generatePhotos };
