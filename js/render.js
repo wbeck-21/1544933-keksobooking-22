@@ -1,8 +1,4 @@
-// Блок, в котором будут отображаться похожие объявления
 const block = document.querySelector('.map__canvas');
-
-
-// Находим шаблон и получаем его содержимое
 const cardTemplate = document.querySelector('#card').content.querySelector('.popup');
 
 
