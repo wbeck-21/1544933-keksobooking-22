@@ -32,7 +32,7 @@ const renderData = (n) => {
   }
 
 
-  block.appendChild(cardElement);
+  return cardElement;
 };
 
 export { renderData };

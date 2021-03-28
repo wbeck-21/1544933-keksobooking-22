@@ -134,27 +134,27 @@ const generatePhotos = (data) => {
 }
 
 const generateDataItem = () => {
-  let obj = {};
+  let dataItem = {};
 
-  obj.author = {};
-  obj.author.avatar = generateAvatar();
+  dataItem.author = {};
+  dataItem.author.avatar = generateAvatar();
 
-  obj.offer = {};
-  obj.offer.title = generateTitle(allTitles);
-  obj.offer.descriptions = generateDiscription(allDescriptions);
-  obj.offer.address = generateAddress();
-  obj.offer.price = generatePrice();
-  obj.offer.type = generateType(allTypes);
-  obj.offer.rooms = generateRooms();
-  obj.offer.guests = generateGuests();
-  obj.offer.checkin = generateCheckIn(allCheckIn);
-  obj.offer.checkout = generateCheckOut(allCheckOut);
-  obj.offer.features = generateFeatures(possibleFeatures);
-  obj.offer.photos = generatePhotos(possiblePhotos);
+  dataItem.offer = {};
+  dataItem.offer.title = generateTitle(allTitles);
+  dataItem.offer.descriptions = generateDiscription(allDescriptions);
+  dataItem.offer.address = generateAddress();
+  dataItem.offer.price = generatePrice();
+  dataItem.offer.type = generateType(allTypes);
+  dataItem.offer.rooms = generateRooms();
+  dataItem.offer.guests = generateGuests();
+  dataItem.offer.checkin = generateCheckIn(allCheckIn);
+  dataItem.offer.checkout = generateCheckOut(allCheckOut);
+  dataItem.offer.features = generateFeatures(possibleFeatures);
+  dataItem.offer.photos = generatePhotos(possiblePhotos);
 
-  obj.location = {};
-  obj.location.x = generateX();
-  obj.location.y = generateY();
+  dataItem.location = {};
+  dataItem.location.x = generateX();
+  dataItem.location.y = generateY();
 
   return dataItem;
 }
@@ -167,6 +167,8 @@ const generateDataList = () => {
 
     dataList.push(dataItem);
   }
+
+  return dataList;
 }
 
 export { generateDataList };
